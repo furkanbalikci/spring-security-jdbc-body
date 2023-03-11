@@ -2,8 +2,8 @@
 
 A base model for spring security login configuration. 
 - With this model you can use user datas from database.
-- You can use custom login config in SecuriyConfig fill, on this project html used for template.
-- After succsess login you catch logged user data.
+- You can use custom login config in SecuriyConfig file, on this project html used for template.
+- After succsess login you get logged user data.
 - On this project postgreSql used for db. You should configure for your db. 
 - User datas can be various but username and password must. For example you can add gender or birthday. 
 
