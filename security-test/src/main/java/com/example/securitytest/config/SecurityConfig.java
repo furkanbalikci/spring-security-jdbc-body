@@ -28,11 +28,12 @@ public class SecurityConfig {
         return http
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> {
-                    auth.requestMatchers("/login").permitAll();
+                    auth.requestMatchers("/login/**").permitAll();
                     auth.anyRequest().authenticated();
                 try {
-                    auth.and().formLogin();
+                    auth.and().formLogin().loginPage("/login").defaultSuccessUrl("/user");
                     auth.and().headers().contentTypeOptions().disable();
+
                 } catch (Exception e) {
                     throw new RuntimeException(e);
                 }
